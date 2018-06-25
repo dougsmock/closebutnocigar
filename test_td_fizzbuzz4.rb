@@ -19,4 +19,13 @@ class CloseButNoCigar < Minitest::Test
     assert_equal(4, match_check("1234", "1234"))
   end
 
+  def test_check_list_returns_test_check_list_returns_0_winners
+    assert_equal(0, check_list(['1234', '2345'], '7777'))
+  end
+
+  def test_check_list_returns_1_ticket_winner
+    assert_equal(1, check_list(['1234', '2345'], '1234'))
+  end
+
+
 end
